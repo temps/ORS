@@ -31,3 +31,13 @@ A basic Unreal Engine project is provided for further development. To open it, e
 ```
 
 The core game code resides in `Source/OilRigSimulator`. Build files like `OilRigSimulator.Build.cs` are included to compile the module within Unreal.
+
+## Compiling the UE Module
+
+You can compile the Unreal Engine module using **UnrealBuildTool** or directly through the Unreal Editor. From the project root run:
+
+```bash
+"<path_to_unreal>/UE5Editor" OilRigSimulator.uproject
+```
+
+This generates the project files and builds the `OilRigSimulator` module. After generation you may also invoke `UnrealBuildTool` manually to build targets from the command line.

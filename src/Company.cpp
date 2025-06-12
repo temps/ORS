@@ -1,4 +1,5 @@
 #include "Company.h"
+#include <algorithm>
 
 Company::Company(const std::string& name) : name(name), cash(0.0), reputation(0) {}
 
@@ -39,6 +40,10 @@ void Company::executeContracts() {
             reputation += 1;
         }
     }
+    contracts.erase(
+        std::remove_if(contracts.begin(), contracts.end(),
+                       [](const Contract& c) { return c.isCompleted(); }),
+        contracts.end());
 }
 
 Market& Company::getMarket() {

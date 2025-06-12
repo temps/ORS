@@ -15,6 +15,10 @@ This document presents an ASCII‑style UML diagram and sample code for the main
        +----------------------->| Equipment |
                                 +-----------+
 
+                             +--------+
+                             | Staff  |
+                             +--------+
+
 +---------+
 |  Market |
 +---------+
@@ -99,8 +103,8 @@ private:
 ```cpp
 class Contract {
 public:
-    Contract(const std::string& client, const std::string& description)
-        : client(client), description(description), completed(false) {}
+    Contract(const std::string& client, const std::string& description, double reward)
+        : client(client), description(description), completed(false), reward(reward) {}
 
     void execute(OilRig& rig) {
         // logic for contract execution
@@ -111,6 +115,23 @@ private:
     std::string client;
     std::string description;
     bool completed;
+    double reward;
+};
+```
+
+### Staff
+```cpp
+class Staff {
+public:
+    Staff(const std::string& name, int skill, double wage)
+        : name(name), skill(skill), wage(wage) {}
+
+    void train() { if (skill < 10) ++skill; }
+
+private:
+    std::string name;
+    int skill;
+    double wage;
 };
 ```
 

@@ -1,1 +1,7 @@
 ors
+
+# Unreal Engine build artifacts
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/

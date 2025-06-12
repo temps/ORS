@@ -21,3 +21,13 @@ Execute the program after building:
 ```
 
 The demo showcases creating a company, operating an oil rig through a simple contract, and updating the market price.
+
+## Unreal Engine Project
+
+A basic Unreal Engine project is provided for further development. To open it, ensure Unreal Engine 5 is installed and run:
+
+```bash
+"<path_to_unreal>/UE5Editor" OilRigSimulator.uproject
+```
+
+The core game code resides in `Source/OilRigSimulator`. Build files like `OilRigSimulator.Build.cs` are included to compile the module within Unreal.

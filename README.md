@@ -31,3 +31,7 @@ A basic Unreal Engine project is provided for further development. To open it, e
 ```
 
 The core game code resides in `Source/OilRigSimulator`. Build files like `OilRigSimulator.Build.cs` are included to compile the module within Unreal.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

@@ -1,13 +1,13 @@
 {
-    "FileVersion": 3,
-    "EngineAssociation": "5.0",
-    "Category": "",
-    "Description": "Oil Rig Simulator Game",
-    "Modules": [
-        {
-            "Name": "OilRigSimulator",
-            "Type": "Runtime",
-            "LoadingPhase": "Default"
-        }
-    ]
+	"FileVersion": 3,
+	"EngineAssociation": "5.4",
+	"Category": "",
+	"Description": "Oil Rig Simulator Game",
+	"Modules": [
+		{
+			"Name": "OilRigSimulator",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	]
 }

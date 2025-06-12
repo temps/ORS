@@ -6,9 +6,12 @@ class OilRig; // forward declaration
 
 class Contract {
 public:
-    Contract(const std::string& client, const std::string& description, double reward);
+    Contract(const std::string& client,
+             const std::string& description,
+             double reward,
+             int duration);
 
-    void execute(OilRig& rig);
+    void work(OilRig& rig);
     bool isCompleted() const;
     const std::string& getClient() const;
     double getReward() const;
@@ -18,6 +21,8 @@ private:
     std::string description;
     bool completed;
     double reward;
+    int daysRequired;
+    int daysWorked;
 };
 
 #endif // CONTRACT_H

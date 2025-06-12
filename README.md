@@ -20,7 +20,7 @@ Execute the program after building:
 ./ors
 ```
 
-The demo now simulates several in-game days. It demonstrates hiring staff, executing a contract that yields revenue and reputation, producing oil each day and updating the market price.
+The demo now simulates several in-game days. It demonstrates hiring staff, paying daily wages, executing multi-day contracts that yield revenue and reputation, producing oil each day and updating the market price.
 
 ## Unreal Engine Project
 

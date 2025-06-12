@@ -16,14 +16,12 @@ int main() {
     company.hireStaff(staff1);
     company.hireStaff(staff2);
 
-    Contract c1("ClientA", "Initial drilling", 5000.0);
+    Contract c1("ClientA", "Initial drilling", 5000.0, 2);
     company.signContract(c1);
 
-    for (int day = 0; day < 3; ++day) {
+    for (int day = 0; day < 5; ++day) {
         std::cout << "--- Day " << day + 1 << " ---" << std::endl;
-        company.executeContracts();
-        company.operate();
-        company.performMaintenance();
+        company.nextDay();
         company.getMarket().updatePrice(5.0 + day, 3.0);
         std::cout << "Cash: " << company.getCash()
                   << " Reputation: " << company.getReputation()

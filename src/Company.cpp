@@ -1,6 +1,6 @@
 #include "Company.h"
 
-Company::Company(const std::string& name) : name(name), cash(0.0), reputation(0) {}
+Company::Company(const std::string& name) : name(name), cash(10000.0), reputation(0) {}
 
 void Company::acquireRig(std::unique_ptr<OilRig> rig) {
     oilRigs.push_back(std::move(rig));
@@ -17,7 +17,7 @@ void Company::hireStaff(std::shared_ptr<Staff> member) {
     }
 }
 
-void Company::operate() {
+void Company::operateRigs() {
     for (auto& rig : oilRigs) {
         rig->operate();
         double produced = rig->produceOil();
@@ -34,11 +34,26 @@ void Company::performMaintenance() {
 void Company::executeContracts() {
     for (auto& contract : contracts) {
         if (!contract.isCompleted() && !oilRigs.empty()) {
-            contract.execute(*oilRigs.front());
-            cash += contract.getReward();
-            reputation += 1;
+            contract.work(*oilRigs.front());
+            if (contract.isCompleted()) {
+                cash += contract.getReward();
+                reputation += 1;
+            }
         }
     }
+}
+
+void Company::payWages() {
+    for (const auto& e : employees) {
+        cash -= e->getWage();
+    }
+}
+
+void Company::nextDay() {
+    operateRigs();
+    executeContracts();
+    performMaintenance();
+    payWages();
 }
 
 Market& Company::getMarket() {

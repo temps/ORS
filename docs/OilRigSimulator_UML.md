@@ -103,12 +103,17 @@ private:
 ```cpp
 class Contract {
 public:
-    Contract(const std::string& client, const std::string& description, double reward)
-        : client(client), description(description), completed(false), reward(reward) {}
+    Contract(const std::string& client, const std::string& description,
+             double reward, int duration)
+        : client(client), description(description), completed(false),
+          reward(reward), daysRequired(duration), daysWorked(0) {}
 
-    void execute(OilRig& rig) {
-        // logic for contract execution
-        completed = true;
+    void work(OilRig& rig) {
+        // work progresses one day
+        ++daysWorked;
+        if (daysWorked >= daysRequired) {
+            completed = true;
+        }
     }
 
 private:
@@ -116,6 +121,8 @@ private:
     std::string description;
     bool completed;
     double reward;
+    int daysRequired;
+    int daysWorked;
 };
 ```
 
@@ -131,7 +138,7 @@ public:
 private:
     std::string name;
     int skill;
-    double wage;
+    double wage; // daily wage paid by the company
 };
 ```
 

@@ -16,9 +16,11 @@ public:
     void acquireRig(std::unique_ptr<OilRig> rig);
     void signContract(const Contract& contract);
     void hireStaff(std::shared_ptr<Staff> member);
-    void operate();
+    void operateRigs();
     void performMaintenance();
     void executeContracts();
+    void payWages();
+    void nextDay();
     Market& getMarket();
     double getCash() const;
     int getReputation() const;
